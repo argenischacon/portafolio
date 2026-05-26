@@ -4,7 +4,7 @@ import { useI18n } from '../context/I18nContext';
 import ProjectModal from './ProjectModal';
 
 const Projects = () => {
-    const { t } = useI18n();
+    const { t, language } = useI18n();
     const [currentPage, setCurrentPage] = useState(1);
     const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
@@ -48,22 +48,32 @@ const Projects = () => {
                         const originalIndex = (currentPage - 1) * itemsPerPage + index;
 
                         return (
-                                <div
-                                    key={originalIndex}
-                                    className="flex flex-col rounded-2xl overflow-hidden bg-surface border border-primary/10 group hover:border-primary/40 transition-all cursor-pointer"
+                            <div
+                                key={originalIndex}
+                                className="flex flex-col rounded-2xl overflow-hidden bg-surface border border-primary/10 group hover:border-primary/40 transition-all cursor-pointer"
                                 onClick={() => setSelectedProject(originalIndex)}
                             >
-                                    <div className="aspect-video bg-surface relative overflow-hidden">
-                                        {project.coverImage ? (
+                                <div className="aspect-video bg-surface relative overflow-hidden">
+                                    {/* Badge "En desarrollo / In Progress" */}
+                                    {'inProgress' in project && project.inProgress && (
+                                        <div className="absolute top-3 left-3 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/90 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-wider shadow-lg">
+                                            <span className="relative flex h-1.5 w-1.5">
+                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
+                                            </span>
+                                            {language === 'es' ? 'En desarrollo' : 'In Progress'}
+                                        </div>
+                                    )}
+                                    {project.coverImage ? (
                                         <>
                                             <div className="absolute inset-0 z-0">
                                                 <img src={project.coverImage} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                                             </div>
-                                                <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent opacity-80 z-10"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/30 to-transparent opacity-80 z-10"></div>
                                         </>
                                     ) : (
                                         <>
-                                                <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+                                            <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
                                             <div className="absolute inset-0 flex items-center justify-center p-8 opacity-40 group-hover:scale-110 transition-transform">
                                                 {getIconForProject(originalIndex)}
                                             </div>
@@ -85,7 +95,7 @@ const Projects = () => {
                                         {'jarLink' in project && 'msiLink' in project && project.jarLink && project.msiLink ? (
                                             <div className="w-full flex flex-row flex-wrap items-center gap-2">
                                                 {/* GitHub Button in 3-button layout */}
-                                                 {project.github ? (
+                                                {project.github ? (
                                                     <a
                                                         href={project.github}
                                                         target="_blank"
@@ -95,7 +105,7 @@ const Projects = () => {
                                                     >
                                                         <Code2 size={16} /> GitHub
                                                     </a>
-                                                 ) : null }
+                                                ) : null}
                                                 {/* JAR Download Button */}
                                                 <a
                                                     href={project.jarLink}

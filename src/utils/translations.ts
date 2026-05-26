@@ -86,7 +86,7 @@ export const translations = {
                         "/projects/iss-swagger-overview.png",
                         "/projects/iss-swagger-endpoints.png",
                         "/projects/iss-swagger-response.png",
-                        "/projects/iss-class-diagram.png",
+                        "/projects/iss-class-diagram.png"
                     ]
                 },
                 {
@@ -107,6 +107,7 @@ export const translations = {
                     techDecisions: "Thymeleaf was chosen over a separate frontend framework to keep the stack cohesive and server-rendered, ideal for an internal admin tool. Spring Security handles form-based auth with role differentiation. H2 is used in development for a zero-config setup. MapStruct ensures clean separation between entities and DTOs at compile time.",
                     github: "https://github.com/argenischacon/dental-clinic",
                     coverImage: "/projects/dental-clinic-cover.png",
+                    inProgress: true,
                     images: [
                         "/projects/dc-login.png",
                         "/projects/dc-dentist-list.png",
@@ -243,6 +244,7 @@ export const translations = {
                     techDecisions: "Thymeleaf fue elegido sobre un framework frontend separado para mantener el stack cohesivo y server-rendered, ideal para una herramienta interna. Spring Security gestiona la autenticación por formulario con diferenciación de roles. H2 se usa en desarrollo para un setup sin configuración. MapStruct garantiza una separación limpia entre entidades y DTOs en tiempo de compilación.",
                     github: "https://github.com/argenischacon/dental-clinic",
                     coverImage: "/projects/dental-clinic-cover.png",
+                    inProgress: true,
                     images: [
                         "/projects/dc-login.png",
                         "/projects/dc-dentist-list.png",
