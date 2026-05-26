@@ -55,7 +55,7 @@ export const translations = {
                     github: "https://github.com/argenischacon/dog-grooming",
                     jarLink: "https://github.com/argenischacon/dog-grooming/releases/download/1.1.1/dog-grooming-1.1.1.jar",
                     msiLink: "https://github.com/argenischacon/dog-grooming/releases/download/1.1.1/dog-grooming-1.1.1.msi",
-                    coverImage: "/projects/dog-grooming-showcase.png",
+                    coverImage: "/projects/dog-grooming-cover.png",
                     images: [
                         "https://raw.githubusercontent.com/argenischacon/dog-grooming/main/assets/main_light.png",
                         "https://raw.githubusercontent.com/argenischacon/dog-grooming/main/assets/main_dark.png",
@@ -65,39 +65,52 @@ export const translations = {
                     ]
                 },
                 {
-                    title: "Banking Security API",
-                    desc: "Secure transactional gateway with multi-factor authentication, JWT token management, and comprehensive audit logging.",
-                    extendedDesc: "A robust security layer designed for financial applications. This API acts as a gateway for sensitive transactions, implementing rigorous security standards. It handles OAuth2 flows, role-based access control (RBAC), and integrates an immutable audit log for compliance. The system is fortified against common OWASP vulnerabilities.",
-                    tags: ["Jakarta EE", "PostgreSQL", "JWT"],
+                    title: "Inventory & Sales System",
+                    desc: "A RESTful API for comprehensive inventory and sales management, featuring secure JWT authentication, full CRUD operations, and interactive Swagger documentation.",
+                    extendedDesc: "A backend application built with Spring Boot 3 and Java 21 to manage a complete inventory and sales system. It handles the full lifecycle of Products, Categories, Customers, and Sales with detailed traceability. The security layer is powered by Spring Security with JWT, ensuring stateless and scalable authentication. Data is mapped efficiently between entities and DTOs using MapStruct, and all endpoints are fully documented and testable via Swagger UI / OpenAPI 3. Supports H2 for local development and PostgreSQL for production environments.",
+                    tags: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MapStruct", "Swagger"],
                     features: [
-                        "Stateless authentication via hardened JWTs",
-                        "Multi-factor authentication (MFA) endpoints",
-                        "Immutable audit trails for all sensitive actions",
-                        "Rate limiting and brute-force protection"
+                        "JWT-based stateless authentication and authorization",
+                        "Full CRUD for Products, Categories, Customers, and Sales",
+                        "Detailed sale records with amount calculation and traceability",
+                        "Interactive API documentation via Swagger UI / OpenAPI 3",
+                        "Clean entity-to-DTO mapping using MapStruct",
+                        "Layered architecture: controller, service, repository, mapper",
+                        "H2 in-memory DB for development, PostgreSQL for production",
+                        "Global exception handling with unified error responses"
                     ],
-                    techDecisions: "Jakarta EE provides a mature, enterprise-grade foundation for financial logic. PostgreSQL was selected for its strong ACID compliance. JWT allows for scalable, stateless authentication across multiple frontend clients.",
-                    // Agregar imágenes reales aquí
+                    techDecisions: "Spring Boot 3 and Java 21 were chosen to leverage the latest LTS features and a mature enterprise ecosystem. Spring Security with JWT provides scalable, stateless authentication suitable for multi-client environments. MapStruct was selected over manual mapping for compile-time safety and performance. The dual-database strategy (H2 / PostgreSQL) allows frictionless local development while remaining production-ready.",
+                    github: "https://github.com/argenischacon/inventory-sales-system",
+                    coverImage: "/projects/iss-cover.png",
                     images: [
-                        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
-                        "https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?w=800&q=80"
+                        "/projects/iss-swagger-overview.png",
+                        "/projects/iss-swagger-endpoints.png",
+                        "/projects/iss-swagger-response.png",
+                        "/projects/iss-class-diagram.png",
                     ]
                 },
                 {
-                    title: "Real-time Analytics Engine",
-                    desc: "High-performance data processing engine using Spring Batch and WebSockets for live visualization of telemetry data.",
-                    extendedDesc: "An engine built to ingest, process, and visualize high-velocity telemetry data from IoT devices. It utilizes Spring Batch for heavy nightly aggregations and Spring WebSockets to push live updates to the frontend dashboard. The architecture ensures low-latency delivery while maintaining data consistency across nodes.",
-                    tags: ["Spring Batch", "MongoDB", "Redis"],
+                    title: "Dental Clinic Management System",
+                    desc: "Internal web system for a dental clinic, featuring role-based access control, patient management, appointment scheduling, and a dentist agenda dashboard.",
+                    extendedDesc: "A full-stack web application built with Spring Boot 3 and Thymeleaf, designed to streamline the daily operations of a dental clinic. The system supports three roles — Administrator, Dentist, and Secretary — each with differentiated access. It handles patient registration including guardians for minors, dentist profiles and schedules, appointment booking and cancellation, and a service catalog. The UI is built on SB Admin 2 (Bootstrap 4) for a clean, professional admin panel.",
+                    tags: ["Java 21", "Spring Boot", "Spring Security", "Thymeleaf", "Bootstrap 4", "H2", "MapStruct", "Lombok"],
                     features: [
-                        "Live data streaming to client dashboards via WebSockets",
-                        "Complex asynchronous batch processing of historical data",
-                        "In-memory caching of hot data for sub-millisecond reads",
-                        "Horizontally scalable worker nodes"
+                        "Role-based access: Administrator, Dentist, and Secretary",
+                        "Patient management with guardian support for minors",
+                        "Appointment scheduling, rescheduling, and cancellation",
+                        "Dentist daily agenda view",
+                        "Service and treatment catalog management",
+                        "Admin panel built with SB Admin 2 (Bootstrap 4)",
+                        "Form-based authentication via Spring Security",
+                        "DTO mapping with MapStruct"
                     ],
-                    techDecisions: "MongoDB easily handles the flexible, schema-less nature of telemetry data. Redis is crucial for caching and pub/sub messaging to coordinate WebSocket sessions across multiple server instances.",
-                    // Agregar imágenes reales aquí
+                    techDecisions: "Thymeleaf was chosen over a separate frontend framework to keep the stack cohesive and server-rendered, ideal for an internal admin tool. Spring Security handles form-based auth with role differentiation. H2 is used in development for a zero-config setup. MapStruct ensures clean separation between entities and DTOs at compile time.",
+                    github: "https://github.com/argenischacon/dental-clinic",
+                    coverImage: "/projects/dental-clinic-cover.png",
                     images: [
-                        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-                        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
+                        "/projects/dc-login.png",
+                        "/projects/dc-dentist-list.png",
+                        "/projects/dc-dentist-details.png"
                     ]
                 }
             ],
@@ -178,7 +191,7 @@ export const translations = {
                     github: "https://github.com/argenischacon/dog-grooming",
                     jarLink: "https://github.com/argenischacon/dog-grooming/releases/download/1.1.1/dog-grooming-1.1.1.jar",
                     msiLink: "https://github.com/argenischacon/dog-grooming/releases/download/1.1.1/dog-grooming-1.1.1.msi",
-                    coverImage: "/projects/dog-grooming-showcase.png",
+                    coverImage: "/projects/dog-grooming-cover.png",
                     images: [
                         "https://raw.githubusercontent.com/argenischacon/dog-grooming/main/assets/main_light.png",
                         "https://raw.githubusercontent.com/argenischacon/dog-grooming/main/assets/main_dark.png",
@@ -188,39 +201,52 @@ export const translations = {
                     ]
                 },
                 {
-                    title: "API de Seguridad Bancaria",
-                    desc: "Pasarela transaccional segura con autenticación multifactor, gestión de tokens JWT y registro de auditoría exhaustivo.",
-                    extendedDesc: "Una capa de seguridad robusta diseñada para aplicaciones financieras. Esta API actúa como una pasarela para transacciones sensibles, implementando rigurosos estándares de seguridad. Maneja flujos OAuth2, control de acceso basado en roles (RBAC) e integra un registro de auditoría inmutable para cumplimiento. El sistema está fortificado contra vulnerabilidades comunes de OWASP.",
-                    tags: ["Jakarta EE", "PostgreSQL", "JWT"],
+                    title: "Sistema de Inventario y Ventas",
+                    desc: "API RESTful para la gestión integral de inventario y ventas, con autenticación JWT segura, operaciones CRUD completas y documentación interactiva con Swagger.",
+                    extendedDesc: "Aplicación backend construida con Spring Boot 3 y Java 21 para gestionar un sistema completo de inventario y ventas. Maneja el ciclo de vida de Productos, Categorías, Clientes y Ventas con trazabilidad detallada. La capa de seguridad utiliza Spring Security con JWT, garantizando autenticación sin estado y escalable. Los datos se mapean eficientemente entre entidades y DTOs usando MapStruct, y todos los endpoints están documentados y son testeables desde Swagger UI / OpenAPI 3. Soporta H2 para desarrollo local y PostgreSQL para entornos de producción.",
+                    tags: ["Java 21", "Spring Boot", "Spring Security", "JWT", "PostgreSQL", "MapStruct", "Swagger"],
                     features: [
-                        "Autenticación sin estado a través de JWTs seguros",
-                        "Endpoints de autenticación multifactor (MFA)",
-                        "Pistas de auditoría inmutables para toda acción sensible",
-                        "Limitación de tasa y protección contra fuerza bruta"
+                        "Autenticación y autorización sin estado con JWT",
+                        "CRUD completo para Productos, Categorías, Clientes y Ventas",
+                        "Registro detallado de ventas con cálculo de montos y trazabilidad",
+                        "Documentación interactiva de la API con Swagger UI / OpenAPI 3",
+                        "Mapeo limpio entidad-DTO mediante MapStruct",
+                        "Arquitectura en capas: controlador, servicio, repositorio, mapper",
+                        "Base de datos H2 en memoria para desarrollo, PostgreSQL para producción",
+                        "Manejo global de excepciones con respuestas de error unificadas"
                     ],
-                    techDecisions: "Jakarta EE proporciona una base madura a nivel empresarial para lógica financiera. PostgreSQL fue seleccionado por su fuerte cumplimiento ACID. JWT permite una autenticación escalable y sin estado en múltiples clientes frontend.",
-                    // Agregar imágenes reales aquí
+                    techDecisions: "Spring Boot 3 y Java 21 fueron elegidos para aprovechar las últimas características LTS y un ecosistema empresarial maduro. Spring Security con JWT provee autenticación escalable y sin estado, ideal para entornos multi-cliente. MapStruct fue preferido sobre el mapeo manual por su seguridad en tiempo de compilación y rendimiento. La estrategia dual de base de datos (H2 / PostgreSQL) permite un desarrollo local sin fricciones manteniendo la aplicación lista para producción.",
+                    github: "https://github.com/argenischacon/inventory-sales-system",
+                    coverImage: "/projects/iss-cover.png",
                     images: [
-                        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
-                        "https://images.unsplash.com/photo-1563986768494-4dee2763ff0f?w=800&q=80"
+                        "/projects/iss-swagger-overview.png",
+                        "/projects/iss-swagger-endpoints.png",
+                        "/projects/iss-swagger-response.png",
+                        "/projects/iss-class-diagram.png"
                     ]
                 },
                 {
-                    title: "Motor de Analítica en Tiempo Real",
-                    desc: "Motor de procesamiento de datos de alto rendimiento usando Spring Batch y WebSockets para visualización en vivo de telemetría.",
-                    extendedDesc: "Un motor construido para ingerir, procesar y visualizar datos de telemetría de alta velocidad provenientes de dispositivos IoT. Utiliza Spring Batch para agregaciones pesadas nocturnas y Spring WebSockets para enviar actualizaciones en vivo al dashboard del frontend. La arquitectura garantiza la entrega de baja latencia manteniendo la consistencia de los datos en todos los nodos.",
-                    tags: ["Spring Batch", "MongoDB", "Redis"],
+                    title: "Sistema de Gestión de Clínica Dental",
+                    desc: "Sistema web interno para una clínica dental con control de acceso por roles, gestión de pacientes, programación de citas y agenda diaria para odontólogos.",
+                    extendedDesc: "Aplicación web full-stack construida con Spring Boot 3 y Thymeleaf, diseñada para optimizar las operaciones diarias de una clínica dental. El sistema soporta tres roles — Administrador, Odontólogo y Secretaria — cada uno con acceso diferenciado. Gestiona el registro de pacientes incluyendo responsables para menores de edad, perfiles y horarios de odontólogos, programación y cancelación de citas, y un catálogo de servicios. La interfaz está construida sobre SB Admin 2 (Bootstrap 4) para un panel de administración limpio y profesional.",
+                    tags: ["Java 21", "Spring Boot", "Spring Security", "Thymeleaf", "Bootstrap 4", "H2", "MapStruct", "Lombok"],
                     features: [
-                        "Transmisión de datos en vivo a dashboards mediante WebSockets",
-                        "Procesamiento asíncrono complejo por lotes de datos históricos",
-                        "Caché en memoria de datos calientes para lecturas en submilisegundos",
-                        "Nodos de trabajo escalables horizontalmente"
+                        "Acceso por roles: Administrador, Odontólogo y Secretaria",
+                        "Gestión de pacientes con soporte de responsables para menores",
+                        "Programación, reprogramación y cancelación de citas",
+                        "Vista de agenda diaria para odontólogos",
+                        "Gestión de catálogo de servicios y tratamientos",
+                        "Panel de administración con SB Admin 2 (Bootstrap 4)",
+                        "Autenticación basada en formulario con Spring Security",
+                        "Mapeo de DTOs con MapStruct"
                     ],
-                    techDecisions: "MongoDB maneja fácilmente la naturaleza flexible y sin esquema de los datos de telemetría. Redis es crucial para la caché y la mensajería pub/sub para coordinar sesiones de WebSocket en múltiples instancias de servidor.",
-                    // Agregar imágenes reales aquí
+                    techDecisions: "Thymeleaf fue elegido sobre un framework frontend separado para mantener el stack cohesivo y server-rendered, ideal para una herramienta interna. Spring Security gestiona la autenticación por formulario con diferenciación de roles. H2 se usa en desarrollo para un setup sin configuración. MapStruct garantiza una separación limpia entre entidades y DTOs en tiempo de compilación.",
+                    github: "https://github.com/argenischacon/dental-clinic",
+                    coverImage: "/projects/dental-clinic-cover.png",
                     images: [
-                        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-                        "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80"
+                        "/projects/dc-login.png",
+                        "/projects/dc-dentist-list.png",
+                        "/projects/dc-dentist-details.png"
                     ]
                 }
             ],
